@@ -1,6 +1,6 @@
 This program converts KoboldAI Lite .json log files to SillyTavern .jsonl log files.  It takes five arguments:
 
-python convert_logs.py <SillyTavern_log> <KoboldAI_log> <SillyTavern_user> <KoboldAI_user> <Output_file>
+python SillyKobold.py <SillyTavern_log> <KoboldAI_log> <SillyTavern_user> <KoboldAI_user> <Output_file>
 
 You need to pass it an existing SillyTavern log because KoboldAI logs don't contain all of the necessary metadata.
 This script creates a new log with the metadata from the SillyTavern log and the chat data from the KoboldAI log,
