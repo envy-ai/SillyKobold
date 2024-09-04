@@ -109,7 +109,7 @@ def convert_logs(sillytavern_file, koboldai_file, sillytavern_user, koboldai_use
 
 if __name__ == "__main__":
     if len(sys.argv) != 6:
-        print("Usage: python convert_logs.py <SillyTavern_log> <KoboldAI_log> <SillyTavern_user> <KoboldAI_user> <Output_file>")
+        print("Usage: python SillyKobold.py <SillyTavern_log> <KoboldAI_log> <SillyTavern_user> <KoboldAI_user> <Output_file>")
         sys.exit(1)
 
     sillytavern_file = sys.argv[1]
