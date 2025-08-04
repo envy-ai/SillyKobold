@@ -73,10 +73,10 @@ def convert_chat_line(speaker, message, player_name, date_str, api_name, model_n
     return chat_entry
 
 def convert_logs(sillytavern_file, koboldai_file, sillytavern_user, koboldai_user, output_file):
-    with open(sillytavern_file, 'r') as st_file:
+    with open(sillytavern_file, 'r', encoding='utf-8') as st_file:
         sillytavern_data = [json.loads(line) for line in st_file.readlines()]
 
-    with open(koboldai_file, 'r') as ka_file:
+    with open(koboldai_file, 'r', encoding='utf-8') as ka_file:
         koboldai_data = json.load(ka_file)
 
     # Extract relevant information
@@ -102,9 +102,9 @@ def convert_logs(sillytavern_file, koboldai_file, sillytavern_user, koboldai_use
             chat["chat_metadata"] = metadata
 
     # Write the converted log to the output file
-    with open(output_file, 'w') as out_file:
+    with open(output_file, 'w', encoding='utf-8') as out_file:
         for chat in converted_chats:
-            json.dump(chat, out_file)
+            json.dump(chat, out_file, ensure_ascii=False)
             out_file.write('\n')
 
 if __name__ == "__main__":
